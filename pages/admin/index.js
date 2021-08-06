@@ -16,7 +16,7 @@ import {
 } from "../../lib/firebase";
 import { useUserData } from "../../lib/hooks";
 import { kebabCase } from "lodash";
-import styles from "../../styles/Admin.module.css";
+import styles from "../../styles/admin.module.css";
 import { useRouter } from "next/dist/client/router";
 
 function AdminPostsPage() {
