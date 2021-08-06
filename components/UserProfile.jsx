@@ -1,9 +1,14 @@
+import Image from "next/image";
 import React from "react";
 
 function UserProfile({ user }) {
   return (
     <div className="box-center">
-      <img src={user.photoURL || "/hacker.png"} className="card-img-center" />
+      <Image
+        src={user.photoURL || "/hacker.png"}
+        alt="profile-pic"
+        className="card-img-center"
+      />
       <p>
         <i>@{user.username}</i>
       </p>

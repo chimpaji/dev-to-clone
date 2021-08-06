@@ -3,6 +3,7 @@ import { UserContext } from "../lib/context";
 import { auth, firestore, googleAuthProvider } from "../lib/firebase";
 import React from "react";
 import debounce from "lodash.debounce";
+import Image from "next/image";
 
 function Enter() {
   const { user, username } = useContext(UserContext);
@@ -38,7 +39,7 @@ function SignInButton() {
         signInWithGoogle();
       }}
     >
-      <img src="google.png" />
+      <Image alt="google-logo" src="/google.png" />
       Login with Google
     </button>
   );
@@ -99,7 +100,6 @@ function UsernameForm() {
     const userDocs = firestore.doc(`devto-clone-users/${user.uid}`);
     const usernameDocs = firestore.doc(`devto-clone-usernames/${formValue}`);
 
-    console.log(555);
     //Commit both docs together as a batch write
     const batch = firestore.batch();
     batch.set(userDocs, {
