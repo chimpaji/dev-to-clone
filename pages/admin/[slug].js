@@ -80,7 +80,6 @@ function PostForm({ post, postRef, preview }) {
     toast.success("Post updated successfully!");
     router.push(`/${post.username}/${post.slug}`);
   };
-  console.log(watch("content"));
   return (
     <form onSubmit={handleSubmit(updatePost)}>
       {preview && (

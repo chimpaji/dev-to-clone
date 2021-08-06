@@ -12,7 +12,7 @@ function HeartButton({ path }) {
 
   const addHeart = () => {
     const batch = firestore.batch();
-
+    // console.log("path", path);
     //update heartCount in post colleciton
     batch.update(postRef, { heartCount: increment(1) });
     //add heart document with uid field in hearts collection
@@ -23,6 +23,7 @@ function HeartButton({ path }) {
 
   const removeHeart = () => {
     const batch = firestore.batch();
+    // console.log("path", path);
 
     //update HeartCount in post collection
     batch.update(postRef, { heartCount: increment(-1) });
