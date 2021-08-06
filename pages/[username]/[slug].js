@@ -5,13 +5,22 @@ import PostContent from "../../components/PostContent";
 import AuthCheck from "../../components/AuthCheck";
 import HeartButton from "../../components/HeartButton";
 import Link from "next/link";
-import { useDocumentData } from "react-firebase-hooks/firestore";
-import { getUserDocWithUsername, postToJson } from "../../lib/firebase";
+import { useDocument, useDocumentData } from "react-firebase-hooks/firestore";
+import {
+  firestore,
+  getUserDocWithUsername,
+  postToJson,
+} from "../../lib/firebase";
 import { UserContext } from "../../lib/context";
 
-function PostPage({ post, path }) {
-  const { user: currentUser } = useContext(UserContext);
+function PostPage(props) {
+  const path = props.path;
 
+  const { user: currentUser } = useContext(UserContext);
+  const [realtimePost] = useDocumentData(firestore.doc(path));
+  console.log("realtimePost", realtimePost);
+  const post = realtimePost || props.post;
+  console.log("check post", post);
   return (
     <main className={styles.container}>
       <Metatags title={post.title} description={post.title} />

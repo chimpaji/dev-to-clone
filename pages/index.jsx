@@ -7,7 +7,7 @@ import { useState } from "react";
 import { firestore, fromMillis, postToJson } from "../lib/firebase";
 import PostFeed from "../components/PostFeed";
 
-const LIMIT = 1;
+const LIMIT = 2;
 
 export async function getServerSideProps() {
   const postsQuery = firestore
@@ -36,7 +36,8 @@ export default function Home(props) {
     const newPostsQuery = firestore
       .collectionGroup("posts")
       .orderBy("createdAt", "desc")
-      .startAfter(cursor);
+      .startAfter(cursor)
+      .limit(LIMIT);
     const newPosts = (await newPostsQuery.get()).docs.map(postToJson);
     // console.log("newPosts", newPosts);
     setPosts([...posts, ...newPosts]);

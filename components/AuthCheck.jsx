@@ -6,7 +6,7 @@ import { useUserData } from "../lib/hooks";
 function AuthCheck({ fallback, children }) {
   const { user, username } = useContext(UserContext);
   console.log("useUserData=>", user, username);
-  if (user) {
+  if (username) {
     return children;
   }
 
