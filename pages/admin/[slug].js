@@ -6,7 +6,6 @@ import { useDocumentDataOnce } from "react-firebase-hooks/firestore";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import ReactMarkdown from "react-markdown";
-import { async } from "../../.next/static/chunks/main";
 import AuthCheck from "../../components/AuthCheck";
 import ImageUploader from "../../components/ImageUploader";
 import { firestore, increment } from "../../lib/firebase";
@@ -51,7 +50,7 @@ function PostManager() {
             <button onClick={() => setPreview(!preview)}>
               {preview ? "Edit" : "Preview"}
             </button>
-            <Link href={`/${post.username}/${post.slug}`}>
+            <Link passHref href={`/${post.username}/${post.slug}`}>
               <button className="btn-blue">Live view</button>
             </Link>
             <DeletePostButton postRef={postRef} />

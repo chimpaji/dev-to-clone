@@ -15,7 +15,7 @@ function PostItem({ post, admin }) {
   const minutesToRead = Math.ceil(wordCount / 250);
   return (
     <div className="card">
-      <Link href={`/${post.username}`}>
+      <Link passHref href={`/${post.username}`}>
         <a>
           <strong>By @{post.username}</strong>
         </a>

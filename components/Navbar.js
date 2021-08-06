@@ -8,7 +8,7 @@ function Navbar() {
     <nav className="navbar">
       <ul>
         <li>
-          <Link href="/">
+          <Link passHref href="/">
             <button className="btn-logo">DEV</button>
           </Link>
         </li>

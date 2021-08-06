@@ -84,7 +84,7 @@ export async function getStaticProps(context) {
 
 export async function getStaticPaths() {
   const snapshot = await firestore.collectionGroup("posts").get();
-  const paths = snapshot.map((doc) => {
+  const paths = snapshot.docs.map((doc) => {
     const { username, slug } = doc.data();
     return { params: { username, slug } };
   });

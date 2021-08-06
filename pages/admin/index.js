@@ -1,10 +1,5 @@
 import React, { useState } from "react";
-import {
-  useCollection,
-  useCollectionData,
-  useCollectionDataOnce,
-  useDocumentDataOnce,
-} from "react-firebase-hooks/firestore";
+import { useCollection } from "react-firebase-hooks/firestore";
 import toast from "react-hot-toast";
 import AuthCheck from "../../components/AuthCheck";
 import PostFeed from "../../components/PostFeed";
