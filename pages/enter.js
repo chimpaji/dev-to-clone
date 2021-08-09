@@ -33,15 +33,19 @@ function SignInButton() {
     await auth.signInWithPopup(googleAuthProvider);
   };
   return (
-    <button
-      className="btn-google"
-      onClick={() => {
-        signInWithGoogle();
-      }}
-    >
-      <Image alt="google-logo" src="/google.png" />
-      Login with Google
-    </button>
+    <div className="btn-signin-container">
+      <button
+        className="btn-google"
+        onClick={() => {
+          signInWithGoogle();
+        }}
+      >
+        <div className="img-google-login">
+          <Image alt="google-logo" src="/google.png" layout="fill" />
+        </div>
+        Login with Google
+      </button>
+    </div>
   );
 }
 

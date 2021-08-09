@@ -1,7 +1,11 @@
+import { useRouter } from "next/dist/client/router";
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import AuthCheck from "../../components/AuthCheck";
 import PostFeed from "../../components/PostFeed";
 import UserProfile from "../../components/UserProfile";
-import { getUserDocWithUsername } from "../../lib/firebase";
+import { auth, getUserDocWithUsername } from "../../lib/firebase";
+import { useUserData } from "../../lib/hooks";
 
 export async function getServerSideProps({ query }) {
   const { username } = query;
@@ -43,13 +47,22 @@ export async function getServerSideProps({ query }) {
   };
 }
 
-function index({ user, posts }) {
+function Index({ user, posts }) {
+  const router = useRouter();
+  const { user: checkIfSignIn } = useUserData();
+
+  const handleSignout = () => {
+    console.log("im out");
+    auth.signOut();
+    router.push("/");
+  };
   return (
     <main>
       <UserProfile user={user} />
+      {checkIfSignIn && <button onClick={handleSignout}>Sign out</button>}
       <PostFeed posts={posts} />
     </main>
   );
 }
 
-export default index;
+export default Index;

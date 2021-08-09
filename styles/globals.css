@@ -271,3 +271,25 @@ input[type="file"] {
 .hidden {
   display: none;
 }
+
+.img-profile {
+  display: block;
+  position: relative;
+  width: 96px;
+  height: 96px;
+  margin: auto;
+}
+
+.img-google-login {
+  display: block;
+  position: relative;
+  width: 96px;
+  height: 96px;
+  margin: auto;
+}
+
+.btn-signin-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
