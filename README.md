@@ -2,7 +2,7 @@
 
 Site: [dev-to-clone-five.vercel.app](https://dev-to-clone-five.vercel.app/)
 
-![Dev.to clone](https://media.giphy.com/media/rEMkSGrGEt7ezKKLh5/giphy.gif)
+![Dev.to clone](https://media.giphy.com/media/wxS3GPngQcKPS0XqG9/giphy.gif)
 
 
 ## Technology
