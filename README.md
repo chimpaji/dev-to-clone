@@ -1,3 +1,30 @@
+# [Dev.to Clone](dev-to-clone-five.vercel.app)
+
+Site: [dev-to-clone-five.vercel.app](https://dev-to-clone-five.vercel.app/)
+
+![Dev.to clone](https://media.giphy.com/media/rEMkSGrGEt7ezKKLh5/giphy.gif)
+
+
+## Technology
+
+ - Next.js
+ - Tailwind
+ - Firestore
+ - Firebase Authentication
+ - Cloud Functions
+ - Firebase Storage
+ - Firebase Security Rules
+
+## Features
+
+ - Creating account by google
+ - Creating post using Markdown
+ - Upload images in the post
+ - Choose your own username
+ - Heart, unheart the post
+ - Pagination on post feed
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
